@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/feedback-hub/static/css/main.e3e3fcb0.css",
-    "main.js": "/feedback-hub/static/js/main.f504425c.js",
-    "index.html": "/feedback-hub/index.html",
-    "main.e3e3fcb0.css.map": "/feedback-hub/static/css/main.e3e3fcb0.css.map",
-    "main.f504425c.js.map": "/feedback-hub/static/js/main.f504425c.js.map"
+    "main.css": "/discordFeedback/static/css/main.e3e3fcb0.css",
+    "main.js": "/discordFeedback/static/js/main.5dc2c318.js",
+    "index.html": "/discordFeedback/index.html",
+    "main.e3e3fcb0.css.map": "/discordFeedback/static/css/main.e3e3fcb0.css.map",
+    "main.5dc2c318.js.map": "/discordFeedback/static/js/main.5dc2c318.js.map"
   },
   "entrypoints": [
     "static/css/main.e3e3fcb0.css",
-    "static/js/main.f504425c.js"
+    "static/js/main.5dc2c318.js"
   ]
 }
