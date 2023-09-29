@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Info from "../components/Info";
 import "../css/Feedback.css";
@@ -12,6 +12,10 @@ const Feedback = () => {
   const [message, setMessage] = useState(initialData);
   const [error, setError] = useState("");
   const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    document.title = "💜 Feedback"
+  }, []);
 
   function handleOnChange(e) {
     setMessage({
