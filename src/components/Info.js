@@ -1,14 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import "../css/Feedback.css";
 import styled from "styled-components";
 
-const InfoP = styled.p`
+const InfoBox = styled.div`
   color: #fff;
   border: 5px solid ${(props) => (props.bgcolor ? props.bgcolor : `#ffd1dc`)};
   border-radius: 10px;
   max-width: 50%;
   margin: 2rem auto;
   padding: 1rem;
+`;
+
+const InfoText = styled.p`
+  margin: 1rem 0 0;
 `;
 
 const InfoSmall = styled.span`
@@ -19,10 +23,10 @@ const InfoSmall = styled.span`
 const Info = (props) => {
   return (
     <div className="info">
-      <InfoP bgcolor={props.bgcolor}>
-        {props.text}
+      <InfoBox bgcolor={props.bgcolor}>
+        <InfoText>{props.text}</InfoText>
         <InfoSmall>{props.smallText}</InfoSmall>
-      </InfoP>
+      </InfoBox>
     </div>
   );
 };

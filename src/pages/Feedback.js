@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import styled from "styled-components";
 import Info from "../components/Info";
 import "../css/Feedback.css";
 
@@ -14,8 +13,21 @@ const Feedback = () => {
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    document.title = "💜 Feedback"
-  }, []);
+    document.title = "💜 Feedback";
+
+    (() => {
+      const params = new URLSearchParams(window.location.search);
+      const url = params.get("url");
+      const webhookRegex = new RegExp(/(https:\/\/discord\.com\/api\/webhooks\/)(\d+)(\/)/, "gmi");
+
+      if (url && webhookRegex.test(url)) {
+        setMessage({
+          ...message,
+          webhook: url,
+        });
+      }
+    })();
+  }, [message]);
 
   function handleOnChange(e) {
     setMessage({
@@ -84,6 +96,7 @@ const Feedback = () => {
           value={message.webhook}
           onChange={handleOnChange}
           pattern="(^http)(.*)"
+          placeholder="https://discord.com/api/webhooks/1151540712203100171/Hf_we-PpRT5pj8Sua0fLc2QpRzoP9nCzNSer22UzBDuPS7x5D18V-8TSUVisV7GlZOMY"
         ></input>
         <label className="f-label">Nachricht:</label>
         <textarea
