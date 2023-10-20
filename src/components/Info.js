@@ -25,7 +25,7 @@ const Info = (props) => {
     <div className="info">
       <InfoBox bgcolor={props.bgcolor}>
         <InfoText>{props.text}</InfoText>
-        <InfoSmall>{props.smallText}</InfoSmall>
+        {props && props.smallText !== "" && <InfoSmall>{props.smallText}</InfoSmall>}
       </InfoBox>
     </div>
   );

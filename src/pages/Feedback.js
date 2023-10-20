@@ -14,7 +14,6 @@ const Feedback = () => {
 
   useEffect(() => {
     document.title = "💜 Feedback";
-
     (() => {
       const params = new URLSearchParams(window.location.search);
       const url = params.get("url");
@@ -27,7 +26,7 @@ const Feedback = () => {
         });
       }
     })();
-  }, [message]);
+  }, []);
 
   function handleOnChange(e) {
     setMessage({
@@ -73,7 +72,7 @@ const Feedback = () => {
   if (submitted) {
     return (
       <div className="f-container">
-        <Info bgcolor={"#77dd77"} text={"Nachricht wurde versendet"} />
+        <Info bgcolor={"#77dd77"} text={"Nachricht wurde versendet"} smallText={"💚"} />
       </div>
     );
   }
